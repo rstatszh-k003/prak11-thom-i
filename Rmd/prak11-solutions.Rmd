@@ -1,0 +1,66 @@
+---
+title: "Eigene Funktionen anwenden"
+author: ""
+output: 
+  html_document: 
+    toc: yes
+    toc_float: yes
+    highlight: tango
+    theme: lumen
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+# Lade Packages
+
+```{r}
+
+library(tidyverse)
+
+source(file = here::here("R/roll-solution.R"))
+source(file = here::here("R/functions.R"))
+
+```
+
+
+# Tibble erstellen
+
+```{r}
+
+dat <- tibble::tibble(
+  roll = seq(1:10000),
+  result = replicate(n = 10000, roll())
+)
+
+```
+
+# Verteilung visualisieren
+
+```{r}
+
+ggplot(dat, aes(x = result)) +
+  geom_bar() +
+  scale_x_continuous(breaks = seq(1:12)) +
+  my_theme(base_family = "Helvetica")
+
+```
+
+# Palmer Penguins visualisieren
+
+1. Nutze den Datensatz `penguins` aus dem R Package `{palmerpenguins}`
+2. Erstelle ein Säulendiagramm mit `geom_bar()` und der Variable 'species' auf der x-Achse und einer farblichen Unterscheidung nach Inseln
+3. Passe das Aussehen des Plots an indem du die Funktion `my_theme()` mit der Schriftart "Helvetica" hinzufügst 
+
+```{r}
+
+library(palmerpenguins)
+
+ggplot(penguins, aes(x = species, fill = island)) +
+  geom_bar() +
+  labs(title = "Piguine auf den Inseln des Palmer Archipelago") +
+  my_theme(base_family = "Helvetica")
+
+```
+

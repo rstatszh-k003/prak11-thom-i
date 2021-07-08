@@ -1,0 +1,48 @@
+---
+title: "Eigene Funktionen anwenden"
+author: ""
+output: 
+  html_document: 
+    toc: yes
+    toc_float: yes
+    highlight: tango
+    theme: lumen
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+# Lade Packages
+
+```{r}
+
+
+```
+
+
+# Tibble erstellen
+
+```{r}
+
+
+```
+
+# Verteilung visualisieren
+
+```{r}
+
+
+```
+
+# Palmer Penguins visualisieren
+
+1. Nutze den Datensatz `penguins` aus dem R Package `{palmerpenguins}`
+2. Erstelle ein Säulendiagramm mit `geom_bar()` und der Variable 'species' auf der x-Achse und einer farblichen Unterscheidung nach Inseln
+3. Passe das Aussehen des Plots an indem du die Funktion `my_theme()` mit der Schriftart "Helvetica" hinzufügst 
+
+```{r}
+
+
+```
+
