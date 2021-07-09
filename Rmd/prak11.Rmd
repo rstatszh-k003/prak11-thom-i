@@ -7,6 +7,8 @@ output:
     toc_float: yes
     highlight: tango
     theme: lumen
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
@@ -17,8 +19,26 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 
 ```{r}
 
+library(tidyverse)
+library(here)
+
 
 ```
+
+# Lade Funktionen
+
+```{r}
+
+here() # Zeigt immer Pfad, wo die R-Project-Datei liegt
+
+source(file = here("R/my_theme.R"))
+
+
+source(file = here("R/my_theme.R"))
+
+
+```
+
 
 
 # Tibble erstellen
@@ -43,6 +63,9 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 
 ```{r}
 
+ggplot(penguins, aes(x= species, fill = island)) +
+  geom_bar() +
+  my_theme(base_familiy = "Helvetica")
 
 ```
 
